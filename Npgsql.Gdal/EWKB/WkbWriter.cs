@@ -14,7 +14,12 @@ namespace EWKB
         private bool emitSRID;
         private double[] coord = new double[4];
 
-        public WkbWriter(ByteOrder byteOrder, bool emitSRID)
+        public WkbWriter():this(ByteOrder.LittleEndian, true)
+        {
+            
+        }
+
+        public WkbWriter(ByteOrder byteOrder = ByteOrder.LittleEndian, bool emitSRID = true)
         {
             encodingType = byteOrder;
             this.emitSRID = emitSRID;
