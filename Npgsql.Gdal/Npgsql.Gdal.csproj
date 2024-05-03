@@ -2,7 +2,32 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>True</SignAssembly>
+    <Title>Npgsql.Gdal</Title>
+    <Version>8.0.2</Version>
+    <Authors>Mikhail Shumilov</Authors>
+    <Description>The package is an Npgsql plugin that allows you to interact with spatial data provided by the PostgreSQL PostGIS extension. On the .NET side, the plugin adds support for geometry types from the GDAL(OGR) library, allowing you to read and write them directly to PostgreSQL.</Description>
+    <Copyright>Copyright 2024 © Mikhail Shumilov</Copyright>
+    <PackageProjectUrl>https://github.com/mamont80/npgsql.gdal</PackageProjectUrl>
+    <PackageIcon>postgresql_gdal.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/mamont80/npgsql.gdal</RepositoryUrl>
+    <PackageTags>postgresql;postgis;npgsql;gdal;ogr;geometry;wkb;ewkb</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\postgresql_gdal.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaxRev.Gdal.Core" Version="3.8.3.286" />
