@@ -1,13 +1,15 @@
-The package is an Npgsql plugin that allows you to interact with spatial data provided by the PostgreSQL PostGIS extension. On the .NET side, the plugin adds support for geometry types from the GDAL(OGR) library, allowing you to read and write them directly to PostgreSQL.
+using System.Drawing;
+using OSGeo.OGR;
 
-GDAL is connected via the nuget package MaxRev.Gdal.Core
-
-To use the NetTopologySuite plugin, add a dependency on this package and create an NpgsqlDataSource.
-There are two ways to interact with PostGIS:
-1) dataSourceBuilder.UseGdal();
-The types Gdal.OGR: Geometry will be used. There will be no projection information. When writing to the database, the value will be srid=0.
-
-```csharp
+namespace Npgsql.Gdal.Tests
+{
+    [TestClass]
+    public class NpgsqlTest
+    {
+        private string ConnectionString = "Server=localhost;User id=postgres;password=123;Database=LayersDB;timeout=300;";
+        [TestMethod]
+        public async Task TestGdal()
+        {
             var dataSourceBuilder = new NpgsqlDataSourceBuilder(ConnectionString);
 
             dataSourceBuilder.UseGdal();
@@ -33,12 +35,10 @@ The types Gdal.OGR: Geometry will be used. There will be no projection informati
                     Assert.IsTrue(point.Equal(g));
                 }
             }
-```
-
-2) dataSourceBuilder.UseGdalExt();
-You need to use the ExtGeometry class, which contains 2 properties: Geometry and SRID.
-
-```csharp
+        }
+        [TestMethod]
+        public async Task TestGdalExt()
+        {
             var dataSourceBuilder = new NpgsqlDataSourceBuilder(ConnectionString);
 
             dataSourceBuilder.UseGdalExt();
@@ -67,4 +67,7 @@ You need to use the ExtGeometry class, which contains 2 properties: Geometry and
                     Assert.IsTrue(point.Equal(eg.Geometry));
                 }
             }
-```
+        }
+
+    }
+}

@@ -1,0 +1,7 @@
+/.vs
+/bin
+/obj
+/Npgsql.Gdal/bin
+/Npgsql.Gdal/obj
+/Npgsql.Gdal.Tests/bin
+/Npgsql.Gdal.Tests/obj
