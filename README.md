@@ -1,6 +1,6 @@
 The package is an Npgsql plugin that allows you to interact with spatial data provided by the PostgreSQL PostGIS extension. On the .NET side, the plugin adds support for geometry types from the GDAL(OGR) library, allowing you to read and write them directly to PostgreSQL.
 
-GDAL is connected via the nuget package MaxRev.Gdal.Core
+GDAL is connected via the nuget package [MaxRev.Gdal.Core](https://www.nuget.org/packages/MaxRev.Gdal.Core)
 
 To use the NetTopologySuite plugin, add a dependency on this package and create an NpgsqlDataSource.
 There are two ways to interact with PostGIS:

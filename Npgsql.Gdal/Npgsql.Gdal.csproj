@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>True</SignAssembly>
-    <Title>Npgsql.Gdal</Title>
+    <Title>Gdal.Npgsql</Title>
     <Version>8.0.2</Version>
     <Authors>Mikhail Shumilov</Authors>
     <Description>The package is an Npgsql plugin that allows you to interact with spatial data provided by the PostgreSQL PostGIS extension. On the .NET side, the plugin adds support for geometry types from the GDAL(OGR) library, allowing you to read and write them directly to PostgreSQL.</Description>
@@ -16,6 +16,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AssemblyName>Gdal.Npgsql</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaxRev.Gdal.Core" Version="3.8.3.286" />
-    <PackageReference Include="Npgsql" Version="8.0.2" />
+    <PackageReference Include="MaxRev.Gdal.Core" Version="3.*" />
+    <PackageReference Include="Npgsql" Version="8.*" />
   </ItemGroup>
 
 </Project>
